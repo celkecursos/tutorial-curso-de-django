@@ -2,6 +2,53 @@
 
 * Python 3 ou superior - Conferir a versão: python --version
 * Django 5 ou superior - Conferir a versão: django-admin --version
+* MySQL 8 ou superior - Conferir a versão: mysql --version
+
+## Como rodar o projeto baixado
+
+Alterar no arquivo "settings.py" as credenciais do banco de dados<br>
+```
+'ENGINE': 'django.db.backends.mysql',
+'NAME': 'nome-do-banco-de-dados',
+'USER': 'usuario-do-banco-de-dados',
+'PASSWORD': 'senha-do-usuario-do-banco-de-dados',
+'HOST': 'localhost',
+'PORT': 3306,
+```
+
+Executa as migration para criar as tabelas.
+```
+python manage.py migrate
+```
+
+Rodar o projeto.
+```
+python manage.py runserver
+```
+
+Acessar o conteúdo padrão do Python.
+```
+http://127.0.0.1:8000
+```
+
+Criar um super usuário.
+```
+python manage.py createsuperuser
+```
+```
+Usuário (leave blank to use 'cesar'): admin
+Endereço de email: cesar@celke.com.br
+Password: 123456A#
+Password (again): 123456A#
+```
+
+Acessar o sistema administrativo padrão do Python.
+```
+http://127.0.0.1:8000/admin
+```
+
+Usuário: admin
+Senha: 123456A#
 
 ## Sequencia para criar o projeto
 
@@ -20,7 +67,44 @@ Rodar o projeto.
 python manage.py runserver
 ```
 
-Executa as migration.
+Criar a base de dados.
+```
+CREATE DATABASE celke CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+Instalar o conector MySQL.
+```
+pip install mysqlclient
+```
+
+Alterar no arquivo "settings.py" as credenciais do banco de dados<br>
+```
+'ENGINE': 'django.db.backends.mysql',
+'NAME': 'nome-do-banco-de-dados',
+'USER': 'usuario-do-banco-de-dados',
+'PASSWORD': 'senha-do-usuario-do-banco-de-dados',
+'HOST': 'localhost',
+'PORT': 3306,
+```
+
+Executa as migration para criar as tabelas.
 ```
 python manage.py migrate
 ```
+
+Criar um super usuário.
+```
+python manage.py createsuperuser
+```
+```
+Usuário (leave blank to use 'cesar'): admin
+Endereço de email: cesar@celke.com.br
+Password: 123456A#
+Password (again): 123456A#
+```
+
+Acessar o sistema administrativo padrão do Python.
+```
+http://127.0.0.1:8000/admin
+```
+
