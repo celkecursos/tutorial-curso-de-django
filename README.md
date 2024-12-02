@@ -108,3 +108,18 @@ Acessar o sistema administrativo padrão do Python.
 http://127.0.0.1:8000/admin
 ```
 
+Criar novo app.
+```
+python manage.py startapp nome-do-app
+```
+```
+python manage.py startapp transactions
+```
+
+Criar a migrations.
+```
+python manage.py makemigrations nome-do-app --name nome-da-migrations
+```
+```
+python manage.py makemigrations transactions --name financial_transactions
+```
